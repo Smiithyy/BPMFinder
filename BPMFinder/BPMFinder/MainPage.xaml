@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BPMFinder"
+             x:Class="BPMFinder.MainPage">
+
+    <!--App UI Layout-->
+    <Grid BackgroundColor="PowderBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "*"/>
+            <RowDefinition Height = "Auto"/>
+            <RowDefinition Height = "Auto"/>
+            <RowDefinition Height = "*"/>
+        </Grid.RowDefinitions>
+
+        <!--App Logo image-->
+        <Image Source = "Assets/metronome.jpg"
+               Grid.Row = "0"/>
+
+        <!--App Name-->
+        <Image Source = "Assets/text.png"
+               Grid.Row = "1"/>
+
+        <!--Song name entry box-->
+        <Entry x:Name = "SongName"
+               Grid.Row = "2"
+               Placeholder = "Enter Song Name"
+               HorizontalOptions = "Center"
+               WidthRequest = "300"/>
+     
+        <!--BPM count display-->
+        <Label
+            x:Name = "bpmLabel"
+            Grid.Row = "3"
+            Text = "0"
+            HorizontalOptions = "Center"
+            FontSize = "Large"/>
+
+        <!--Tap button-->
+        <Button 
+            Grid.Row = "4"
+            HorizontalOptions = "Center"
+            WidthRequest = "200"
+            Clicked = "Button_Clicked"
+            Text = "TAP ALONG"/>
+
+        <!--Entry button for final display-->
+        <Button Clicked = "Button_Clicked_1"
+                Grid.Row = "5"
+                HorizontalOptions = "Center"
+                WidthRequest = "200"
+                Text = "ENTER"/>
+
+        <!--Final display with song name and BPM count-->
+        <Label x:Name = "SongNameLabel"
+               Grid.Row = "6"/>
+        
+    </Grid>
+
+</ContentPage>
